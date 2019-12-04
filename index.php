@@ -6,15 +6,13 @@
 <body>
 <?php
 
-	echo "Gerenciamentos de Concertos";
-
+	echo "Gerenciamentos	 de Concertos";
+	
+	include 'conexao.php';
+	
 ?>
 
 
 
 <body>
 </html>
-
-
-
-419 581#
