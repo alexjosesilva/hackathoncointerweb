@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
 <title>Desktop</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 </head>
 
 <body>

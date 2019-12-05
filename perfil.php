@@ -44,16 +44,17 @@
 		?>	
 		<div class="wrapper">
 			<form action="atualizarPerfil.php" method="post" >
-            
+            	
+				<input type="hidden" name="id_usuario" class="form-control" value="<?php echo $_SESSION["id_usuario"]; ?>" >
 				<div class="form-group">
-					<label>Matricula</label>
-					<input type="text" name="username" class="form-control" value="<?php echo $_SESSION["ds_nome"]; ?>">
+					<label>Nome</label>
+					<input type="text" name="ds_nome" class="form-control" value="<?php echo $_SESSION["ds_nome"]; ?>">
 					<span class="help-block"></span>
 				</div>  
 				
 				<div class="form-group">
 					<label>Matricula</label>
-					<input type="text" name="username" class="form-control" value="<?php echo $_SESSION["matricula"]; ?>">
+					<input type="text" name="matricula" class="form-control" value="<?php echo $_SESSION["matricula"]; ?>">
 					<span class="help-block"></span>
 				</div>  
 				
@@ -65,7 +66,7 @@
 				
 				<div class="form-group" >
 					<label>Senha Nova</label>
-					<input type="password" name="senha" class="form-control" value="	">
+					<input type="text" name="senha" class="form-control" value="<?php echo $_SESSION["senha"]; ?>">
 					<span class="help-block"></span>
 				</div>
 			
@@ -75,11 +76,14 @@
 					<span class="help-block"></span>
 				</div>
 				
+				
+				
 				<div class="form-group">
 					<input type="submit" class="btn btn-primary" value="Atualizar Perfil">
 					<input type="reset" class="btn btn-default" value="Reset">
 				</div>
        
+				
 			</form>
 		</div>
 	

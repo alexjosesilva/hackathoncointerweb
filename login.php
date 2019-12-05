@@ -45,15 +45,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($count == 1) {
 
 				session_start();
-				echo "teste2";
+				
 				// Store data in session variables
 				$_SESSION["loggedin"]   = true;
-				$_SESSION["id_usuario"] = $id_usuario;
-				$_SESSION["matricula"]  = $username; 
-				$_SESSION["ds_nome"] = $row['ds_nome']; 				
-				$_SESSION["email"] = $row['email']; 
-				$_SESSION["telefone"] = $row['telefone']; 
-				$_SESSION["perfil"] = $row['perfil']; 
+				$_SESSION["id_usuario"] = $row['id_usuario']; ;
+				$_SESSION["ds_nome"] 	= $row['ds_nome']; 				
+				$_SESSION["email"] 		= $row['email']; 
+				$_SESSION["senha"] 		= $row['senha'];
+				$_SESSION["telefone"] 	= $row['telefone']; 
+				$_SESSION["perfil"] 	= $row['perfil']; 
+				$_SESSION["matricula"] 	= $row['matricula']; 
 				
 				// Redirect user to welcome page
 				header("location: home.php");

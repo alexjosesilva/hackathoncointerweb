@@ -1,6 +1,6 @@
 <div id="topo1">
         	<div id="logo">
-				<a href="http://localhost/www/hackathoncointerweb/">
+				<a href="http://localhost/www/hackathoncointerweb/" style="text-decoration:none">
 					<img src="image/logo2.png" height="60"/>
 				</a>
            	</div>
@@ -63,7 +63,7 @@
 					<div class="dropdown-content">
 						<a href="./configuracao.php">Configuracao</a>
 						<a href="./perfil.php">Perfil de <b><?php echo htmlspecialchars($_SESSION["ds_nome"]); ?></b></a>
-						<a href="logout.php" class="btn btn-danger">Sair</a>
+						<a href="logout.php" >Sair</a>
 				  </div>
 				</div>
 			</div>

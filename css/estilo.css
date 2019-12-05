@@ -87,8 +87,7 @@ a{
 }
 a:hover{
 	text-decoration:none;
-	color:#ffff00;
-	border-bottom: 5px solid red;	
+	color:#ffff00;	
 }
 #persona{
 	width:60px; height:60px;
