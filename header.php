@@ -1,6 +1,6 @@
 <div id="topo1">
         	<div id="logo">
-				<a href="http://localhost/www/hackathoncointerweb/" style="text-decoration:none">
+				<a href="https://heathcheck.herokuapp.com/index.php" style="text-decoration:none">
 					<img src="image/logo2.png" height="60"/>
 				</a>
            	</div>
