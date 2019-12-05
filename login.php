@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $username_err = "Por favor insira sua matricula.";
     } else{
         $username = trim($_POST["username"]);
     }
@@ -35,15 +35,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id_usuario, matricula, ds_nome, senha FROM tb_usuario WHERE matricula =".$username." && senha=".$password;
+        $sql = "SELECT * FROM tb_usuario WHERE matricula =".$username." && senha=".$password;
        
 		$result = mysqli_query($link,$sql);
 		
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-		//$active = $row['active'];
-        
-		var_dump($row);
-	  
+
 		$count = mysqli_num_rows($result);
         if($count == 1) {
 
@@ -54,11 +51,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$_SESSION["id_usuario"] = $id_usuario;
 				$_SESSION["matricula"]  = $username; 
 				$_SESSION["ds_nome"] = $row['ds_nome']; 				
+				$_SESSION["email"] = $row['email']; 
+				$_SESSION["telefone"] = $row['telefone']; 
+				$_SESSION["perfil"] = $row['perfil']; 
 				
 				// Redirect user to welcome page
 				header("location: home.php");
 		 }else{
-                echo "Oops! Dados errados. Por favor refaça a operação.";
+                echo "<span style='color:red;'>Oops! Dados errados. Por favor refaça a operação.</span>";
          }
         
         
@@ -101,8 +101,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
+				<input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Dificuldades em acessar ? <a href="signup.php">Recuperar Conta</a>.</p>
+            <p>Dificuldades em acessar ? <a href="recuperar.php">Recuperar Conta</a>.</p>
         </form>
     </div>    
 </body>
