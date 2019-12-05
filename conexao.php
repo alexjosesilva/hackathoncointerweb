@@ -10,20 +10,12 @@
 	$usertable="tb_usuario";
 	$yourfield = "ds_nome";
 	
-	$con = mysqli_connect($hostname,$username, $password);
-	$db= mysqli_select_db($con,$dbname);
+	$link = mysqli_connect($hostname,$username, $password);
+	$db= mysqli_select_db($link,$dbname);
 	
-	# Verifique se o registro existe
-	
-	$query = "SELECT * FROM $usertable";
-	
-	$result = mysqli_query($con,$query);
-	
-	if($result){
-		echo "Lista Usuario<br/>";
-		while($row = mysqli_fetch_array($result)){
-			$name = $row["$yourfield"];
-			echo "Nome: ".$name."<br/>";
-		}
+	// Check connection
+	if($link === false){
+		die("ERROR: Could not connect. " . mysqli_connect_error());
 	}
+	
 ?>
